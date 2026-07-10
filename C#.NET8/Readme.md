@@ -1,10 +1,14 @@
-C# utility WinForms
+C# utility WinForms. Main Form View: 
 
-Main Form View, use text fields as peekers for range set. 
+Use text fields as peekers for range set. Click on field then set bound on hystogram with cursor.
 
-Double clicks on range readonly fields restores bounds 0.5 or 1.0.
+Double clicks on range readonly fields restores bounds 0.5 or 1.0 respectively.
 
-Double click on hystogram resolution text filed set it to 800 - image with in pixels.
+Double click on hystogram resolution text filed set it to 800 - image width in pixels. 
+
+('Hr max' - resolution range 1E0:1E6, spared >800 plotted with gray color and densed <800 with violet)
+
+('Hs max' - points range 1E0:1E6, bigger will require separate thread)
 
 ![Main Form View](FormMain.PNG)
 
