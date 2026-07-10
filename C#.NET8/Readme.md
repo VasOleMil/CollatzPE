@@ -6,7 +6,7 @@ Double clicks on range readonly fields restores bounds 0.5 or 1.0.
 
 Double click on hystogram resolution text filed set it to 800 - image with in pixels.
 
-![Main Form View](FormMain.png)
+![Main Form View](FormMain.PNG)
 
 Unload not implemented since sequence generator is currently has limitation by Int64. Use math packeges for rigor statistics.
 
