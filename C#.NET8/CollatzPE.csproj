@@ -5,7 +5,9 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <StartupObject>CollatzPE.Program</StartupObject>
+    <PackageProjectUrl>https://github.com/VasOleMil/CollatzPE</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>

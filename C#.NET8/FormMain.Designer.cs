@@ -1,4 +1,7 @@
-﻿namespace CollatzPE
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace CollatzPE
 {
     partial class CollatzPE
     {
@@ -41,7 +44,7 @@
             lbPmax = new Label();
             lbPmin = new Label();
             tbPmin = new TextBox();
-            btSave = new Button();
+            btStepS = new Button();
             tbPcur = new TextBox();
             lbHrc = new Label();
             tbHrm = new TextBox();
@@ -52,14 +55,19 @@
             tbHevn = new TextBox();
             tbHcm = new TextBox();
             lbHcm = new Label();
+            tbSnap = new TextBox();
+            btClear = new Button();
+            btStepG = new Button();
+            btCopy = new Button();
+            btSnap = new Button();
             ((System.ComponentModel.ISupportInitialize)trPcur).BeginInit();
             SuspendLayout();
             // 
             // btPlot
             // 
-            btPlot.Location = new Point(823, 325);
+            btPlot.Location = new Point(825, 325);
             btPlot.Name = "btPlot";
-            btPlot.Size = new Size(102, 23);
+            btPlot.Size = new Size(100, 23);
             btPlot.TabIndex = 0;
             btPlot.Text = "Plot";
             btPlot.UseVisualStyleBackColor = true;
@@ -67,7 +75,7 @@
             // 
             // tbHsm
             // 
-            tbHsm.Location = new Point(823, 245);
+            tbHsm.Location = new Point(825, 245);
             tbHsm.Name = "tbHsm";
             tbHsm.Size = new Size(100, 23);
             tbHsm.TabIndex = 1;
@@ -145,7 +153,8 @@
             tbPmax.Location = new Point(712, 370);
             tbPmax.Name = "tbPmax";
             tbPmax.Size = new Size(100, 23);
-            tbPmax.TabIndex = 15;
+            tbPmax.TabIndex = 2;
+            tbPmax.DoubleClick += tbPmax_DoubleClick;
             tbPmax.Leave += tbPmax_Leave;
             // 
             // lbPmax
@@ -171,24 +180,26 @@
             tbPmin.Location = new Point(12, 370);
             tbPmin.Name = "tbPmin";
             tbPmin.Size = new Size(100, 23);
-            tbPmin.TabIndex = 16;
+            tbPmin.TabIndex = 1;
+            tbPmin.DoubleClick += tbPmin_DoubleClick;
             tbPmin.Leave += tbPmin_Leave;
             // 
-            // btSave
+            // btStepS
             // 
-            btSave.Location = new Point(823, 370);
-            btSave.Name = "btSave";
-            btSave.Size = new Size(102, 23);
-            btSave.TabIndex = 18;
-            btSave.Text = "Unload";
-            btSave.UseVisualStyleBackColor = true;
+            btStepS.Location = new Point(825, 370);
+            btStepS.Name = "btStepS";
+            btStepS.Size = new Size(48, 23);
+            btStepS.TabIndex = 5;
+            btStepS.Text = "<<";
+            btStepS.UseVisualStyleBackColor = true;
+            btStepS.Click += btStepS_Click;
             // 
             // tbPcur
             // 
             tbPcur.Location = new Point(380, 370);
             tbPcur.Name = "tbPcur";
             tbPcur.Size = new Size(100, 23);
-            tbPcur.TabIndex = 19;
+            tbPcur.TabIndex = 3;
             tbPcur.Leave += tbPcur_Leave;
             // 
             // lbHrc
@@ -202,7 +213,7 @@
             // 
             // tbHrm
             // 
-            tbHrm.Location = new Point(823, 289);
+            tbHrm.Location = new Point(825, 289);
             tbHrm.Name = "tbHrm";
             tbHrm.Size = new Size(100, 23);
             tbHrm.TabIndex = 20;
@@ -254,7 +265,7 @@
             // 
             // tbHcm
             // 
-            tbHcm.Location = new Point(823, 12);
+            tbHcm.Location = new Point(825, 12);
             tbHcm.Name = "tbHcm";
             tbHcm.ReadOnly = true;
             tbHcm.Size = new Size(100, 23);
@@ -269,11 +280,67 @@
             lbHcm.TabIndex = 27;
             lbHcm.Text = "Hc max";
             // 
+            // tbSnap
+            // 
+            tbSnap.AcceptsReturn = true;
+            tbSnap.Location = new Point(12, 412);
+            tbSnap.Multiline = true;
+            tbSnap.Name = "tbSnap";
+            tbSnap.ScrollBars = ScrollBars.Vertical;
+            tbSnap.Size = new Size(800, 90);
+            tbSnap.TabIndex = 29;
+            tbSnap.WordWrap = false;
+            // 
+            // btClear
+            // 
+            btClear.Location = new Point(825, 479);
+            btClear.Name = "btClear";
+            btClear.Size = new Size(100, 23);
+            btClear.TabIndex = 9;
+            btClear.Text = "Clear";
+            btClear.UseVisualStyleBackColor = true;
+            btClear.Click += btClear_Click;
+            // 
+            // btStepG
+            // 
+            btStepG.Location = new Point(877, 370);
+            btStepG.Name = "btStepG";
+            btStepG.Size = new Size(48, 23);
+            btStepG.TabIndex = 6;
+            btStepG.Text = ">>";
+            btStepG.UseVisualStyleBackColor = true;
+            btStepG.Click += btStepG_Click;
+            // 
+            // btCopy
+            // 
+            btCopy.Location = new Point(825, 450);
+            btCopy.Name = "btCopy";
+            btCopy.Size = new Size(100, 23);
+            btCopy.TabIndex = 7;
+            btCopy.Text = "Copy";
+            btCopy.UseVisualStyleBackColor = true;
+            btCopy.Click += btCopy_Click;
+            // 
+            // btSnap
+            // 
+            btSnap.Location = new Point(825, 411);
+            btSnap.Name = "btSnap";
+            btSnap.Size = new Size(100, 23);
+            btSnap.TabIndex = 4;
+            btSnap.Text = "Snap";
+            btSnap.UseVisualStyleBackColor = true;
+            btSnap.Click += btSnap_Click;
+            // 
             // CollatzPE
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(937, 402);
+            ClientSize = new Size(937, 514);
+            Controls.Add(btSnap);
+            Controls.Add(btCopy);
+            Controls.Add(btStepG);
+            Controls.Add(btClear);
+            Controls.Add(tbSnap);
             Controls.Add(tbHcm);
             Controls.Add(lbHcm);
             Controls.Add(tbHevn);
@@ -284,7 +351,7 @@
             Controls.Add(lbHrc);
             Controls.Add(tbHrm);
             Controls.Add(tbPcur);
-            Controls.Add(btSave);
+            Controls.Add(btStepS);
             Controls.Add(lbPmin);
             Controls.Add(tbPmin);
             Controls.Add(tbPmax);
@@ -322,7 +389,7 @@
         private Label lbPmax;
         private Label lbPmin;
         private TextBox tbPmin;
-        private Button btSave;
+        private Button btStepS;
         private TextBox tbPcur;
         private Label lbHrc;
         private TextBox tbHrm;
@@ -333,5 +400,10 @@
         private TextBox tbHevn;
         private TextBox tbHcm;
         private Label lbHcm;
+        private TextBox tbSnap;
+        private Button btClear;
+        private Button btStepG;
+        private Button btCopy;
+        private Button btSnap;
     }
 }
