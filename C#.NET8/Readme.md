@@ -1,18 +1,18 @@
 C# utility WinForms. Main Form View: 
 
-Use text fields as peekers for range set. Click on field then set bound on hystogram with cursor.
+Use text fields as peekers for range or current set. Click on field then set value on hystogram with cursor.
 
 Double clicks on range readonly fields restores bounds 0.5 or 1.0 respectively.
 
 Double click on hystogram resolution text filed set it to 800 - image width in pixels. 
 
-('Hr max' - resolution range 1E0:1E6, spared >800 plotted with gray color and densed <800 with violet)
+('Hr max' - resolution range 1E0:1E5, sparsed >800 plotted with gray color, and densed <800 with violet)
 
 ('Hs max' - points range 1E0:1E6, bigger will require separate thread)
 
 ![Main Form View](FormMain.PNG)
 
-Unload not implemented since sequence generator is currently has limitation by Int64. Use math packeges for rigor statistics.
+Sequence unload is not implemented, since generator is currently has limitation by Int64. Use math packages for rigor statistics.
 
 ```csharp 
 //---------------------------------------------------------------------
