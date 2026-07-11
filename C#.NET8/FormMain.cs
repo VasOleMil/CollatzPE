@@ -248,11 +248,11 @@ namespace CollatzPE
         //---------------------------------------------------------------------
         private void tbVmin_DoubleClick(object sender, EventArgs e)
         {
-            Pmin = Vmin = Rmin; PvalRefresh();
+            Pmin = Vmin = Rmin; Vrev = 1D / (Vmax - Vmin); PvalRefresh();
         }
         private void tbVmax_DoubleClick(object sender, EventArgs e)
         {
-            Pmax = Vmax = Rmax; PvalRefresh();
+            Pmax = Vmax = Rmax; Vrev = 1D / (Vmax - Vmin); PvalRefresh();
         }
         private void tbPmin_DoubleClick(object sender, EventArgs e)
         {
