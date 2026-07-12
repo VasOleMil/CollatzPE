@@ -1,8 +1,8 @@
 C# utility WinForms. Main Form View: 
 
-Use text fields as peekers for range or current set. Click on field then set value on hystogram with cursor.
+Use text fields as peekers for range or current set. Click on field then set value on hystogram with cursor. Set range bounds for precise current positioning by slider.
 
-Double clicks on range readonly fields restores bounds 0.5 or 1.0 respectively.
+Double clicks on range readonly fields restores bounds 0.5 or 1.0 respectively. Regular range field double click resets bound position. 
 
 Double click on hystogram resolution text filed set it to 800 - image width in pixels. 
 
